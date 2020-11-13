@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ form.sender_name.label }}</title>
+</head>
+<body>
+  <form method="POST" action= "{{ url_for('package.new_package') }}">
+  <!-- <form method="POST" action= "/package/new"> -->
+    {{ form.csrf_token }}
+    {{ form.sender_name.label }}
+    {{ form.sender_name }}
+    {{ form.recipient_name.label }}
+    {{ form.recipient_name }}
+    <br>
+    {{ form.origin.label }}
+    {{ form.origin }}
+    {{ form.destination.label }}
+    {{ form.destination }}
+    <br>
+    {{ form.is_express.label }}
+    {{ form.is_express }}
+    {{ form.submit }}
+    <button>
+      Cancel
+    </button>
+  </form>
+</body>
+</html>
